@@ -14,6 +14,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.Alignment
+import androidx.compose.material.Text
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 @Composable fun Note(){
     val backgroundShape: Shape = RoundedCornerShape(4.dp)
     Row(modifier = Modifier
@@ -32,8 +36,25 @@ import androidx.compose.ui.Alignment
             border=1.dp
         )
         Column(modifier = Modifier.weight(1f).align(Alignment.CenterVertically)) {
-            Text(text = "Заголовок", maxLines = 1)
-            Text(text = "Содержимое", maxLines = 1)
+            Text(text = "Заголовок",
+            color = Color.Black,
+            maxLines = 1,
+            style = TextStyle(
+                fontWeight = FontWeight.Normal,
+                fontSize = 16.sp,
+                letterSpacing = 0.15.sp
+            )
+        )
+            Text(
+                text = "Содержание",
+                color = Color.Black.copy(alpha = 0.75f),
+                maxLines = 1,
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 14.sp,
+                    letterSpacing = 0.25.sp
+                )
+            )
         }
         Checkbox(
             checked = false,
