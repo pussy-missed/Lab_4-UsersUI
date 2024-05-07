@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.Dp
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.graphics.SolidColor
 
 @Composable
@@ -22,8 +23,8 @@ fun NoteColor(color: Color,
               border: Dp){
     Box(
         modifier = Modifier
+            .padding(4.dp)
             .size(40.dp)
-            .background(Color.Yellow)
             .clip(CircleShape)
             .background(Color.Red)
             .border(
