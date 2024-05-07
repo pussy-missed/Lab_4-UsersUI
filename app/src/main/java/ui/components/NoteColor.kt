@@ -19,14 +19,15 @@ import androidx.compose.ui.graphics.SolidColor
 @Composable
 fun NoteColor(color: Color,
               size: Dp,
+              modifier: Modifier = Modifier,
               padding: Dp = 0.dp,
               border: Dp){
     Box(
-        modifier = Modifier
-            .padding(4.dp)
-            .size(40.dp)
+        modifier = modifier
+            .padding(padding)
+            .size(size)
             .clip(CircleShape)
-            .background(Color.Red)
+            .background(color)
             .border(
                 BorderStroke(
                     2.dp,
