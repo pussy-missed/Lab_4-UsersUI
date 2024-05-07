@@ -15,7 +15,7 @@ import com.topic2.android.notes.routing.Screen
 import com.topic2.android.notes.theme.NotesTheme
 import kotlinx.coroutines.launch
 import ui.components.AppDrawer
-import ui.components.ColorItem.NotesScreen
+import com.topic2.android.notes.ui.screens.NotesScreen
 import ui.components.Note
 /**
  * Main activity приложения.

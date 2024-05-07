@@ -15,18 +15,16 @@ import kotlinx.coroutines.launch
  */
 class MainViewModel(private val repository: Repository) : ViewModel() {
     val notesNotInTrash: LiveData<List<NoteModel>> by lazy {
-        repository.getAllNotesInTrash()
+        repository.getAllNotesNotInTrash()
     }
-    fun onCreateNewNoteClick(){
+
+    fun onCreateNewNoteClick() {
 
     }
 
-    fun onNoteClick(note: NoteModel) {
-
-    }
 
     fun onNoteCheckedChange(
-        note:NoteModel
+        note: NoteModel
     ) {
         viewModelScope.launch(
             Dispatchers.Default
@@ -36,4 +34,7 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
-}
+        fun onNoteClick(note: NoteModel) {
+
+        }
+    }
