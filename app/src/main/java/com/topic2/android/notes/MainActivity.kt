@@ -15,6 +15,7 @@ import com.topic2.android.notes.routing.Screen
 import com.topic2.android.notes.theme.NotesTheme
 import kotlinx.coroutines.launch
 import ui.components.AppDrawer
+import ui.components.ColorItem.NotesScreen
 import ui.components.Note
 /**
  * Main activity приложения.
@@ -33,29 +34,8 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
 
     setContent {
-      NotesTheme {
-        val coroutineScope = rememberCoroutineScope()
-        val scaffoldState: ScaffoldState = rememberScaffoldState()
-        Scaffold(
-          scaffoldState = scaffoldState,
-          drawerContent = {
-            AppDrawer(
-              currentScreen = Screen.Notes,
-              closeDrawerAction = {
-                coroutineScope.launch {
-                  scaffoldState.drawerState.close()
-                }
-              }
-            )
 
-          },
-          content = {
-            Note()
-          }
-        )
-
-
-      }
+      NotesTheme {NotesScreen(viewModel = viewModel)}
     }
   }
 }
